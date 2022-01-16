@@ -42,9 +42,6 @@ def contact(request):
 def login_request(request):
     context = {}
     url = ""
-    dealerships = get_dealers_from_cf(url)
-    # Concat all dealer's short name
-    context["dealership_list"]=dealerships
     if request.method == "POST":
         # Get username and password from request.POST dictionary
         username = request.POST['username']
@@ -66,9 +63,6 @@ def login_request(request):
 def logout_request(request):
     context = {}
     url = ""
-    dealerships = get_dealers_from_cf(url)
-    # Concat all dealer's short name
-    context["dealership_list"]=dealerships
     # Get the user object based on session id in request
     print("Log out the user `{}`".format(request.user.username))
     # Logout user in the request
