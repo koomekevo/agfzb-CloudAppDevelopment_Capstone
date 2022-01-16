@@ -27,15 +27,15 @@
             {% if user.is_authenticated %}
             <div class="ml-auto">
                 <a class="h6 mr-2 text-light">Welcome, {{user.username}}</a>
-                <a class="btn btn-outline-danger btn-sm" type="button" href="#">Logout</a>
+                <a class="btn btn-outline-danger btn-sm" type="button" href="{% url 'djangoapp:logout' %}">Logout</a>
             </div> 
             {% else %}
-            <form action="#"  method="post" class="ml-auto">
+            <form action="{% url 'djangoapp:login' %}"  method="post" class="ml-auto">
                 {% csrf_token %}<!--Important do not touch-->
                 <input class="" type="text" id="username" name="username" placeholder="UserName:">
                 <input type="password" id="pword" name="pword" placeholder="Password:">
                 <input class="btn btn-outline-success btn-sm" type="submit" value="Login">
-                <a class="btn btn-outline-warning btn-sm" type="submit" href="#">Sign Up</a>
+                <a class="btn btn-outline-warning btn-sm" type="submit" href="{% url 'djangoapp:registration' %}">Sign Up</a>
             </form>
             {% endif %}
         </nav>
