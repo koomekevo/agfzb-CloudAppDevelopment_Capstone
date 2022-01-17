@@ -1,11 +1,11 @@
   applications:
   - name: djangoapp-capstone-one
     routes:
-      - route: koomekevo.apic.mybluemix.net
+      - route: djangoapp-capstone-one.mybluemix.net
     memory: 128M
     buildpack: python_buildpack
   - name: djangoapp-capstone-one-nginx
     routes:
-      - route: koomekevo.apic.mybluemix.net/static
+      - route: djangoapp-capstone-one.mybluemix.net/static
     memory: 128M
     buildpack: staticfile_buildpack
