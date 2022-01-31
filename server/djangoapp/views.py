@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, render, redirect
 # from .models import related models
 # from .restapis import related methods
+from .restapis import get_dealers_from_cf
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from datetime import datetime
@@ -41,7 +42,7 @@ def contact(request):
 # Create a `login_request` view to handle sign in request
 def login_request(request):
     context = {}
-    url = ""
+    url = "https://7727eaaa.eu-gb.apigw.appdomain.cloud/api/dealership"
     if request.method == "POST":
         # Get username and password from request.POST dictionary
         username = request.POST['username']
@@ -62,7 +63,7 @@ def login_request(request):
 # Create a `logout_request` view to handle sign out request
 def logout_request(request):
     context = {}
-    url = ""
+    url = "https://7727eaaa.eu-gb.apigw.appdomain.cloud/api/dealership"
     # Get the user object based on session id in request
     print("Log out the user `{}`".format(request.user.username))
     # Logout user in the request
