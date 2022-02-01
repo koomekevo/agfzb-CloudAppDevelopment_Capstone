@@ -29,7 +29,17 @@ def get_request(url, **kwargs):
 
 # Create a `post_request` to make HTTP POST requests
 # e.g., response = requests.post(url, params=kwargs, json=payload)
-
+def post_request(url, payload, **kwargs):
+    print(url)
+    print(payload)
+    print(kwargs)
+    try:
+        response = requests.post(url, params=kwargs, json=payload)
+    except Exception as e:
+        print("Error" ,e)
+    print("Status Code ", {response.status_code})
+    data = json.loads(response.text)
+    return data
 
 # Create a get_dealers_from_cf method to get dealers from a cloud function
 # def get_dealers_from_cf(url, **kwargs):
@@ -102,4 +112,3 @@ def analyze_review_sentiments(dealerreview, **kwargs):
         return sentiment
     except:
         return "neutral"
-        
