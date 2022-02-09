@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <title>Dealership Review</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -13,9 +12,13 @@
     <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
 
 </head>
-
+{% if message %}
+    <script>
+        alert('{{ message }}');
+    </script>
+{%endif%}
     <body>
-    <!--Add a nav bar here -->
+    <!--Header and Navbar -->
     <header class="pb-5">
         <nav class=" navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class=" navbar-brand" href="{% url 'djangoapp:index' %}">Best Cars &#128663;</a>
@@ -35,7 +38,6 @@
             {% endif %}
         </nav>
     </header>
-
     <!--Add a dealer table here -->
     <main role="main" class="container pt-3">
         <table class="table" id="table" data-filter-control="true">
@@ -65,6 +67,18 @@
         </table>
     </main>
 
+    <!--Footer and navbar-->
+    <footer class="navbar navbar-expand-md navbar-dark fixed-bottom bg-dark">
+      <div class="container">
+        <a class="btn btn-sm btn-outline-info" type="button" href="{% url 'djangoapp:about' %}">About Us</a>
+        <a class="btn btn-sm btn-outline-info" type="button" href="{% url 'djangoapp:contact' %}">Contact Us</a>
+      </div>
+    </footer>
     </body>
-
+<script>
+  $(function() {
+    $('#table').bootstrapTable()
+  })
+  
+</script>
 </html>
