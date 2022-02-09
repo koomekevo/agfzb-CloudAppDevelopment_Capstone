@@ -122,7 +122,7 @@ def get_dealerships(request):
 # def get_dealer_details(request, dealer_id):
 def get_dealer_details(request, dealer_id):
     context={}
-    url = "https://7727eaaa.eu-gb.apigw.appdomain.cloud/api/dealership"
+    url = "https://7727eaaa.eu-gb.apigw.appdomain.cloud/api/review"
     apikey="lyrwb-4yytKpeor_zCax1e37y48rLSyTVGvjMkX-3B6f"
     #print(dealer_id)
     # Get dealers from the URL
