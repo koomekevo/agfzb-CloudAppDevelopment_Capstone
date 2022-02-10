@@ -20,7 +20,7 @@ spec:
         run: dealership
     spec:
       containers:
-      - image: us.icr.io/paul-burg-0920/dealership:latest
+      - image: us.icr.io/capstone-namespace/dealership:v1
         imagePullPolicy: Always
         name: dealership
         ports:
